@@ -11,24 +11,17 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   styleUrl: './index.component.scss',
 })
 export class IndexComponent implements OnInit {
-  teams: any = [
-    {
-      img: 'assets/index/facebook.png',
-      description_1: 'Facebook premier',
-      description_2: 'Level Agency Partner',
-    },
-  ];
+  users: any = [];
 
   constructor(public companiesService: CompaniesService) {}
 
   ngOnInit() {
-    this.getCompanies();
+    this.getUsers();
   }
 
-  getCompanies() {
-    this.companiesService.getCompanies().subscribe((res) => {
-      console.log(res);
-      this.teams = res;
+  getUsers() {
+    this.usersService.getUsers().subscribe((res) => {
+      this.users = res;
     });
   }
 
