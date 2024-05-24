@@ -29,7 +29,7 @@ export class ContactComponent {
 
   registryUser() {
     let obj = {
-      users: this.user,
+      name: this.user,
       team: this.team,
     };
 

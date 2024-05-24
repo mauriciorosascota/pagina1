@@ -11,14 +11,7 @@
               Descubre quienes son los mejores jugadores de league of legends.
             </h1>
             <small>grupo gamers.</small>
-  
-            <button
-              type="button"
-              class="btn btn-call-action mt-5"
-              (click)="createRandomCompany()"
-            >
-              ver contenido
-            </button>
+          
           </div>
           <div style="flex: 1">
             <img src="assets/index/613b652430e8530004ba3a04.png" style="height: 300px" alt="" />
@@ -30,17 +23,17 @@
           </div>
           <div
             class="col-lg-2 col-md-6 col-sm-12 py-2"
-            *ngFor="let team of teams"
+            *ngFor="let user of users"
           >
             <img
-              [src]="team.avatar"
+              [src]="user.avatar"
               alt=""
             />
-            <p class="mb-0">{{ team.name }}</p>
-            <p class="mb-0">{{ team.name }}</p>
+            <p class="mb-0">{{ user.name }}</p>
+            <p class="mb-0">{{ user.team }}</p>
             <button
               class="btn btn-danger btn-sm mt-2"
-              (click)="deleteCompany(team.id)"
+              (click)="deleteCompany(user.id)"
             >
               borrar
             </button>

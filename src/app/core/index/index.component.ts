@@ -2,6 +2,7 @@ import { CompaniesService } from './../../services/companies.service';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-index',
@@ -13,7 +14,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 export class IndexComponent implements OnInit {
   users: any = [];
 
-  constructor(public companiesService: CompaniesService) {}
+  constructor(public companiesService: CompaniesService, public usersService: UsersService) {}
 
   ngOnInit() {
     this.getUsers();
@@ -21,21 +22,15 @@ export class IndexComponent implements OnInit {
 
   getUsers() {
     this.usersService.getUsers().subscribe((res) => {
+      console.log(res)
       this.users = res;
     });
   }
 
-  createRandomCompany() {
-    let obj = {};
-
-    this.companiesService.createRandomCompany(obj).subscribe((res) => {
-      this.getCompanies();
-    });
-  }
 
   deleteCompany(id: string) {
-    this.companiesService.deleteCompany(id).subscribe((res) => {
-      this.getCompanies();
+    this.usersService.deleteUser(id).subscribe((res) => {
+      this.getUsers();
     });
   }
 }
