@@ -1,0 +1,52 @@
+<div class="vh-100 background d-flex flex-column">
+    <app-navbar></app-navbar>
+  
+    <div class="container d-flex mt-4" style="gap: 20px">
+      <div class="left" style="flex: 1">
+        <div class="card">
+          <div class="card-body">
+            <h1>Registrate</h1>
+            <div class="form-group">
+              <label for="username">User</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                [(ngModel)]="users"
+                placeholder="Escribe el nombre"
+              />
+            </div>
+            <div class="form-group">
+              <label for="username">Team</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                [(ngModel)]="team"
+                placeholder="ingresa el equipo"
+              />
+            </div>
+            <button
+              type="button"
+              (click)="registryUser()"
+              class="btn btn-primary mt-3"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="right" style="flex: 2">
+        <h1>Contactos</h1>
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item d-flex align-items-center justify-content-between"
+            *ngFor="let user of users"
+          >
+            {{ user.teams }}
+            <button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">Borrar</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,49 @@
+<nav
+  class="navbar navbar-expand-lg d-flex navbar-dark justify-content-between"
+  style="background-color: #00000021 !important"
+>
+  <div class="container">
+    <a
+      class="navbar-brand"
+      [routerLink]="['/index']"
+      routerLinkActive="router-link-active"
+    >
+      <img src="assets/pngwing.com.png" alt="" width="30" height="24" />
+    </a>
+
+    
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a
+          class="nav-link"
+          [class]="currentUrl == '/index' ? 'active' : ''"
+          aria-current="page"
+          [routerLink]="['/index']"
+          routerLinkActive="router-link-active"
+          >Home</a
+        >
+        <a
+          class="nav-link"
+          [class]="currentUrl == '/contact' ? 'active' : ''"
+          [routerLink]="['/contact']"
+          routerLinkActive="router-link-active"
+          >apoyanos</a
+        >
+        <a class="nav-link disabled" tabindex="-1" aria-disabled="true"
+          >Nuestra app</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>
