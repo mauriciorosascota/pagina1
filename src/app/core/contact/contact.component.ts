@@ -15,6 +15,7 @@ export class ContactComponent {
   users: any = [];
   id: string = '';
   team: string = '';
+  user: string = '';
 
   constructor(public usersService: UsersService) {
     this.getUsers();
@@ -28,7 +29,7 @@ export class ContactComponent {
 
   registryUser() {
     let obj = {
-      users: this.users,
+      users: this.user,
       team: this.team,
     };
 
