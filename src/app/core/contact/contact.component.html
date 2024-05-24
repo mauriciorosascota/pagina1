@@ -43,7 +43,7 @@
             class="list-group-item d-flex align-items-center justify-content-between"
             *ngFor="let user of users"
           >
-            {{ user.teams }}
+            {{ user.team }}
             <button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">Borrar</button>
           </li>
         </ul>

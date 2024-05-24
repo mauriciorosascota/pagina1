@@ -10,7 +10,7 @@ export class CompaniesService {
   constructor(private http: HttpClient) {}
 
   getCompanies() {
-    return this.http.get(`${Uris.teams}`).pipe(
+    return this.http.get(`${Uris.TEAMS}`).pipe(
       catchError((err: any) => {
         return err;
       }),
@@ -21,7 +21,7 @@ export class CompaniesService {
   }
 
   createRandomCompany(obj: any) {
-    return this.http.post(`${Uris.teams}`, obj).pipe(
+    return this.http.post(`${Uris.TEAMS}`, obj).pipe(
       catchError((err: any) => {
         return err;
       }),
@@ -32,7 +32,7 @@ export class CompaniesService {
   }
 
   deleteCompany(id: string) {
-    return this.http.delete(`${Uris.teams}/${id}`).pipe(
+    return this.http.delete(`${Uris.TEAMS}/${id}`).pipe(
       catchError((err: any) => {
         return err;
       }),

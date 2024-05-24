@@ -10,7 +10,7 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   getUsers() {
-    return this.http.get(`${Uris.users}`).pipe(
+    return this.http.get(`${Uris.USERS}`).pipe(
       catchError((err: any) => {
         return err;
       }),
@@ -21,7 +21,7 @@ export class UsersService {
   }
 
   createUser(obj: any) {
-    return this.http.post(`${Uris.users}`, obj).pipe(
+    return this.http.post(`${Uris.USERS}`, obj).pipe(
       catchError((err: any) => {
         return err;
       }),
@@ -32,7 +32,7 @@ export class UsersService {
   }
 
   deleteUser(id: string) {
-    return this.http.delete(`${Uris.users}/${id}`).pipe(
+    return this.http.delete(`${Uris.USERS}/${id}`).pipe(
       catchError((err: any) => {
         return err;
       }),
